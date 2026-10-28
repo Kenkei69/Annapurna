@@ -8,20 +8,21 @@
 import { Firestore, FieldValue } from '@google-cloud/firestore';
 import { GoogleGenAI } from '@google/genai';
 
-const PROJECT_ID = 'project-a9c284f8-6bca-440a-a0c';
-
-const firestore = new Firestore({
-  projectId: PROJECT_ID,
-  keyFilename: '/Users/sumitsaraswat/project-a9c284f8-6bca-440a-a0c-5cdec2cf9219.json',
-});
-
 import * as dotenv from 'dotenv';
 import path from 'path';
 dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
+
+const PROJECT_ID = process.env.GCP_PROJECT_ID || process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || 'project-a9c284f8-6bca-440a-a0c';
+
+const firestore = new Firestore({
+  projectId: PROJECT_ID,
+  ...(process.env.GOOGLE_APPLICATION_CREDENTIALS ? { keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS } : {}),
+});
+
 const ai = new GoogleGenAI({
   vertexai: true,
-  project: 'project-a9c284f8-6bca-440a-a0c',
-  location: 'us-central1'
+  project: PROJECT_ID,
+  location: process.env.GCP_LOCATION || 'us-central1'
 });
 
 const COMPLIANCE_DOCS = [

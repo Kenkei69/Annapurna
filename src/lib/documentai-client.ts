@@ -2,7 +2,7 @@ import { DocumentProcessorServiceClient } from '@google-cloud/documentai';
 import { getAI, DEFAULT_MODEL } from './vertex-client';
 
 const client = new DocumentProcessorServiceClient();
-const PROJECT_ID = 'project-a9c284f8-6bca-440a-a0c';
+const PROJECT_ID = process.env.GCP_PROJECT_ID || process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || 'project-a9c284f8-6bca-440a-a0c';
 const LOCATION = 'us';
 
 let cachedProcessorName: string | null = null;

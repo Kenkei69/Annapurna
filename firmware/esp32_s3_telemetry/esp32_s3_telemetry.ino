@@ -24,10 +24,11 @@
 #include "DHT.h"
 #include <math.h>
 
-// ========== WiFi ==========
-const char* WIFI_SSID     = "OnePlus Nord 2T 5G";
-const char* WIFI_PASSWORD = "oneplus9319446777";
-const char* API_URL       = "https://annapurna-web-887568501843.us-central1.run.app/api/iot-telemetry";
+// ========== WiFi & Telemetry Endpoint ==========
+// Configure your local WiFi network and deployed Annapurna API endpoint
+const char* WIFI_SSID     = "YOUR_WIFI_SSID";
+const char* WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";
+const char* API_URL       = "https://your-annapurna-deployment.run.app/api/iot-telemetry";
 unsigned long lastPostTime = 0;
 
 // ========== OLED ==========

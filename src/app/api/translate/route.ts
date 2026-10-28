@@ -9,7 +9,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing text or targetLanguage' }, { status: 400 });
     }
 
-    const translate = new Translate({ projectId: 'project-a9c284f8-6bca-440a-a0c' });
+    const translate = new Translate({ projectId: process.env.GCP_PROJECT_ID || process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || 'project-a9c284f8-6bca-440a-a0c' });
     
     // Map full language names to language codes
     const languageMap: Record<string, string> = {

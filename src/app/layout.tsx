@@ -18,6 +18,14 @@ export const metadata: Metadata = {
   title: "Annapurna | AI-Powered Cold Chain Intelligence",
   description:
     "Real-time distress commodity marketplace that saves food from spoiling in transit. Annapurna uses Agentic AI to autonomously reroute trucks and connect drivers with nearby wholesalers.",
+  authors: [{ name: "Kenkei69", url: "https://github.com/Kenkei69" }],
+  openGraph: {
+    title: "Annapurna | AI-Powered Cold Chain Intelligence",
+    description: "Autonomous Multi-Agent AI · Emergency Cargo Rescue · Real-Time Cold-Chain Intelligence",
+    url: "https://github.com/Kenkei69/Annapurna",
+    siteName: "Annapurna",
+    type: "website",
+  },
 };
 
 import { AuthProvider } from "@/lib/auth";

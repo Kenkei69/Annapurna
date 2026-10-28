@@ -1,7 +1,9 @@
 const fs = require('fs');
+const path = require('path');
 
 // 1. Update src/lib/auth.tsx
-let authTsx = fs.readFileSync('/Users/sumitsaraswat/Annapurna-Gemini-APAC/src/lib/auth.tsx', 'utf8');
+const authPath = path.join(__dirname, 'src/lib/auth.tsx');
+let authTsx = fs.readFileSync(authPath, 'utf8');
 if (!authTsx.includes('GoogleAuthProvider')) {
   authTsx = authTsx.replace(
     "import {\n  onAuthStateChanged,",
@@ -38,11 +40,12 @@ if (!authTsx.includes('GoogleAuthProvider')) {
     "login, register, logout, loginWithGoogle"
   );
   
-  fs.writeFileSync('/Users/sumitsaraswat/Annapurna-Gemini-APAC/src/lib/auth.tsx', authTsx);
+  fs.writeFileSync(authPath, authTsx);
 }
 
 // 2. Update src/app/login/page.tsx
-let pageTsx = fs.readFileSync('/Users/sumitsaraswat/Annapurna-Gemini-APAC/src/app/login/page.tsx', 'utf8');
+const pagePath = path.join(__dirname, 'src/app/login/page.tsx');
+let pageTsx = fs.readFileSync(pagePath, 'utf8');
 if (!pageTsx.includes('loginWithGoogle')) {
   pageTsx = pageTsx.replace(
     "const { login, register, user } = useAuth();",
@@ -94,7 +97,7 @@ if (!pageTsx.includes('loginWithGoogle')) {
     googleButtonHTML + "\n        </form>"
   );
   
-  fs.writeFileSync('/Users/sumitsaraswat/Annapurna-Gemini-APAC/src/app/login/page.tsx', pageTsx);
+  fs.writeFileSync(pagePath, pageTsx);
 }
 
 console.log("Google Auth Button Added!");

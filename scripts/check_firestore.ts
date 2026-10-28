@@ -3,8 +3,8 @@ import { Firestore } from '@google-cloud/firestore';
 async function checkFirestore() {
   try {
     const firestore = new Firestore({
-      projectId: 'project-a9c284f8-6bca-440a-a0c',
-      keyFilename: '/Users/sumitsaraswat/project-a9c284f8-6bca-440a-a0c-5cdec2cf9219.json',
+      projectId: process.env.GCP_PROJECT_ID || process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || 'project-a9c284f8-6bca-440a-a0c',
+      ...(process.env.GOOGLE_APPLICATION_CREDENTIALS ? { keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS } : {}),
     });
     
     console.log('Testing Firestore connection...');

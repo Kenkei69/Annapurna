@@ -32,6 +32,7 @@ yarn-error.log*
 
 # env files & gcp secrets
 .env*
+!.env.example
 *service-account*.json
 *.json.key
 

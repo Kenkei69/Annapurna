@@ -9,7 +9,7 @@
 
 import { BigQuery } from '@google-cloud/bigquery';
 
-const PROJECT_ID = 'project-a9c284f8-6bca-440a-a0c';
+const PROJECT_ID = process.env.GCP_PROJECT_ID || process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || 'annapurna-ai';
 const DATASET_ID = 'annapurna_telemetry';
 
 const bigquery = new BigQuery({ projectId: PROJECT_ID });

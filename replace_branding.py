@@ -1,6 +1,6 @@
 import os
 
-base_dir = "/Users/sumitsaraswat/Annapurna-Gemini-APAC/src/components/landing"
+base_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "src/components/landing")
 
 def process_file(filename, replacements):
     path = os.path.join(base_dir, filename)

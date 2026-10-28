@@ -1,6 +1,13 @@
 const fs = require('fs');
+const path = require('path');
 
-let ui = fs.readFileSync('/Users/sumitsaraswat/Annapurna-Gemini-APAC/src/app/login/page.original.tsx', 'utf8');
+const origFile = path.join(__dirname, 'src/app/login/page.original.tsx');
+const destFile = path.join(__dirname, 'src/app/login/page.tsx');
+if (!fs.existsSync(origFile)) {
+  console.log("No page.original.tsx found, skipping.");
+  process.exit(0);
+}
+let ui = fs.readFileSync(origFile, 'utf8');
 
 // 1. Change role to farmer/wholesaler
 ui = ui.replace(
@@ -131,5 +138,5 @@ if (!ui.includes('import { useRouter }')) {
   ui = ui.replace('import { useAuth }', 'import { useRouter } from "next/navigation";\nimport { useAuth }');
 }
 
-fs.writeFileSync('/Users/sumitsaraswat/Annapurna-Gemini-APAC/src/app/login/page.tsx', ui);
+fs.writeFileSync(destFile, ui);
 console.log("UI Restored and Updated!");

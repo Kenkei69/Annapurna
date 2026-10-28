@@ -1,4 +1,7 @@
 import sys
+import os
+
+repo_root = os.path.dirname(os.path.abspath(__file__))
 
 def replace_in_file(filepath, replacements):
     with open(filepath, 'r') as f:
@@ -11,7 +14,7 @@ def replace_in_file(filepath, replacements):
         f.write(content)
 
 # File 1
-replace_in_file('/Users/sumitsaraswat/Annapurna-Gemini-APAC/src/app/architecture/page.tsx', [
+replace_in_file(os.path.join(repo_root, 'src/app/architecture/page.tsx'), [
     ('Google Cloud IoT Core', 'IoT Core'),
     ("id: 'vertexai'", "id: 'neuralengine'"),
     ('id: "vertexai"', 'id: "neuralengine"'),
@@ -34,7 +37,7 @@ replace_in_file('/Users/sumitsaraswat/Annapurna-Gemini-APAC/src/app/architecture
 ])
 
 # File 2
-replace_in_file('/Users/sumitsaraswat/Annapurna-Gemini-APAC/src/app/fleet/page.tsx', [
+replace_in_file(os.path.join(repo_root, 'src/app/fleet/page.tsx'), [
     ('BigQuery Sync Failed', 'Data Sync Failed'),
     ('Failed to stream to BigQuery', 'Failed to stream to data warehouse'),
     ('BigQuery Sync', 'Data Sync'),
@@ -46,7 +49,7 @@ replace_in_file('/Users/sumitsaraswat/Annapurna-Gemini-APAC/src/app/fleet/page.t
 ])
 
 # File 3
-replace_in_file('/Users/sumitsaraswat/Annapurna-Gemini-APAC/src/app/analytics/page.tsx', [
+replace_in_file(os.path.join(repo_root, 'src/app/analytics/page.tsx'), [
     ('BigQuery Conversational Agent', 'Conversational Analytics Agent'),
     ('Gemini will generate SQL and query BigQuery directly', 'The AI will generate SQL and query the data warehouse directly'),
     ('Ask BigQuery', 'Ask Analytics'),

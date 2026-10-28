@@ -60,7 +60,7 @@ export async function POST(req: Request) {
         const alertMsg = `🚨 EMERGENCY: Cargo ${cargoId} temperature hit ${tempNum}°C (humidity: ${humNum}%). Spoilage in ~${spoilageMinutes} min. Immediate action required!`;
         
         // Fire-and-forget: don't block the IoT response
-        const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://annapurna-web-887568501843.us-central1.run.app';
+        const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
         
         fetch(`${baseUrl}/api/notify/email`, {
           method: 'POST',

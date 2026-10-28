@@ -78,12 +78,13 @@ export function FooterCTA() {
       </div>
       
       {/* Footer Links */}
-      <div className="absolute bottom-8 w-full px-12 flex justify-between items-center text-xs font-bold text-[var(--text-tertiary)] z-10">
-        <div>© 2026 Annapurna. All rights reserved.</div>
+      <div className="absolute bottom-8 w-full px-12 flex flex-col sm:flex-row gap-4 justify-between items-center text-xs font-bold text-[var(--text-tertiary)] z-10">
+        <div>© 2026 Annapurna. Independently maintained by Kenkei69.</div>
         <div className="flex gap-6">
+          <a href="https://github.com/Kenkei69/Annapurna" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text-primary)] transition-colors">GitHub</a>
+          <a href="https://github.com/Kenkei69/Annapurna/issues" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text-primary)] transition-colors">Support & Issues</a>
           <a href="#" className="hover:text-[var(--text-primary)] transition-colors">Privacy</a>
           <a href="#" className="hover:text-[var(--text-primary)] transition-colors">Terms</a>
-          <a href="#" className="hover:text-[var(--text-primary)] transition-colors">System Status</a>
         </div>
       </div>
     </footer>

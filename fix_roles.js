@@ -1,5 +1,7 @@
 const fs = require('fs');
-let ui = fs.readFileSync('/Users/sumitsaraswat/Annapurna-Gemini-APAC/src/app/login/page.tsx', 'utf8');
+const path = require('path');
+const targetFile = path.join(__dirname, 'src/app/login/page.tsx');
+let ui = fs.readFileSync(targetFile, 'utf8');
 
 // Revert role from farmer back to director
 ui = ui.replace(
@@ -11,5 +13,5 @@ ui = ui.replace(/setRole\("farmer"\)/g, 'setRole("director")');
 ui = ui.replace(/role === "farmer"/g, 'role === "director"');
 ui = ui.replace(/\/nerve-center/g, '/fleet');
 
-fs.writeFileSync('/Users/sumitsaraswat/Annapurna-Gemini-APAC/src/app/login/page.tsx', ui);
+fs.writeFileSync(targetFile, ui);
 console.log("Roles fixed!");

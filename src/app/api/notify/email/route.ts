@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { Firestore, FieldValue } from '@google-cloud/firestore';
-const PROJECT_ID = 'project-a9c284f8-6bca-440a-a0c';
+const PROJECT_ID = process.env.GCP_PROJECT_ID || process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || 'project-a9c284f8-6bca-440a-a0c';
 const getFirestore = () => {
   if (process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON) {
     const credentials = JSON.parse(Buffer.from(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON, 'base64').toString());

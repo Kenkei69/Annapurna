@@ -2,6 +2,16 @@
   "name": "annapurna",
   "version": "0.1.0",
   "private": true,
+  "description": "Autonomous Multi-Agent AI & Real-Time Cold-Chain Intelligence for Perishable Cargo Logistics",
+  "author": "Kenkei69",
+  "homepage": "https://github.com/Kenkei69/Annapurna#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kenkei69/Annapurna.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kenkei69/Annapurna/issues"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

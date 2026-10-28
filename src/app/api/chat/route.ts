@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { Firestore } from '@google-cloud/firestore';
 
 const firestore = new Firestore({
-  projectId: 'project-a9c284f8-6bca-440a-a0c',
+  projectId: process.env.GCP_PROJECT_ID || process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || 'project-a9c284f8-6bca-440a-a0c',
 });
 
 export async function POST(req: Request) {

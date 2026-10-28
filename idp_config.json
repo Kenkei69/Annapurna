@@ -65,9 +65,7 @@
   "authorizedDomains": [
     "project-a9c284f8-6bca-440a-a0c.firebaseapp.com",
     "project-a9c284f8-6bca-440a-a0c.web.app",
-    "localhost",
-    "annapurna-gemini-apac-887568501843.us-central1.run.app",
-    "annapurna-sih-887568501843.us-central1.run.app"
+    "localhost"
   ],
   "subtype": "IDENTITY_PLATFORM",
   "client": {
